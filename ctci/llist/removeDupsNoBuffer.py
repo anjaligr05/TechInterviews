@@ -58,16 +58,19 @@ def divideLists(head):
 def removeDups(head):
 	if head is None or head.next is None:
 		return head
-	t = head
 	prev = head
-	t = t.next
+	t = head.next
 	while t:
-		temp = t.next
-		if t.val == prev.val:
-			prev.next = t.next
-			t.next = None
+		tprev = None
+		while prev and t and prev.val == t.val:
+			tprev = t
+			t = t.next
+		if tprev!=None:
+			tprev.next = None
+			prev.next = t
 		prev = t
-		t = temp
+		if t:
+			t = t.next
 	return head
 		
 if __name__=='__main__':
@@ -76,6 +79,11 @@ if __name__=='__main__':
 	lst.append(Node(0))
 	lst.append(Node(1))
 	lst.append(Node(4))
+	lst.append(Node(4))
+	lst.append(Node(4))
+	lst.append(Node(4))
+	lst.append(Node(5))
+	lst.append(Node(5))
 	lst.append(Node(5))
 	lst.append(Node(3))
 	print 'Original List'
