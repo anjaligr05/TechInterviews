@@ -1,0 +1,2 @@
+def searchRotated(arr, target):
+	
