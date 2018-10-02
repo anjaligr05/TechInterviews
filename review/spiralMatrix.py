@@ -21,12 +21,14 @@ def spiralMatrix(n):
 			for i in range(colE,colB-1,-1):
 				matrix[rowE][i] = count
 				count+=1
+				i-=1
 		rowE-=1
 		#up
 		if colB<=colE:
 			for i in range(rowE,rowB-1,-1):
 				matrix[i][colB] = count
 				count+=1
+				i-=1
 		colB+=1
 	return matrix
 print spiralMatrix(3)

@@ -11,14 +11,18 @@ def searchRotated(arr, target):
 				j = mid-1
 			else:
 				i=mid+1
-		else:
+		elif arr[mid]<arr[j] or arr[mid]<arr[i]: 
 			if target>arr[mid] and target<=arr[j]:
 				i = mid+1
 			else:
 				j = mid-1
+		else:
+			j-=1
 	return -1
 print searchRotated([4,5,6,0,1,3], 6)
 print searchRotated([3,5,7,1,2],5)
 print searchRotated([3,5,7,1,2],1)
+print searchRotated([3,5,7,1,2,3], 5)
+print searchRotated([3,5,7,1,2,3], 3)
 		
 	
