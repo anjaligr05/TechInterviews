@@ -1,0 +1,2 @@
+def mergeIntervals(intervals):
+	
